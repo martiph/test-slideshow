@@ -4,22 +4,20 @@ function myFunction() {
 }
 
 function swipeRight() {
-    if (num < 5) {
-        num++;
-    } else if (num == 5) {
-        num = 1;
-    } else {
-        num = 5;
+    switch (num) {
+        case 5: num = 1;
+            break;
+        default:
+            num++;
     }
     myFunction();
 }
 function swipeLeft() {
-    if (num > 1) {
-        num--;
-    } else if (num == 1) {
-        num = 5;
-    } else {
-        num = 1;
+    switch (num) {
+        case 1: num = 5;
+            break;
+        default:
+            num--;
     }
     myFunction();
 }
