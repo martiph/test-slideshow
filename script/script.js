@@ -1,28 +1,23 @@
+var body = document.getElementsByTagName("body")[0];
+var container = document.createElement("div");
+createSlides(container);
+body.appendChild(container);
 
-function myFunction() {
-    document.getElementById("slideshow").innerHTML = '<button onclick="swipeLeft()">&#8656</button>' +
-        '<img alt="picture" src="./img/img' + num + '.jpg" />' +
-        '<button onclick="swipeRight()">&#8658</button>'
+function createSlides(container) {
+    var pictures = ["img1", "img2", "img3", "img4", "img5"];
+    pictures.forEach(picture => {
+        var div = document.createElement("div");
+        var image = document.createElement("img");
+        image.setAttribute("src", "./img/" + picture + ".jpg");
+        div.appendChild(image);
+        var buttonPrev = document.createElement("div");
+        var buttonNext = document.createElement("div");
+        buttonPrev.classList.add("prev");
+        buttonPrev.innerHTML = "&#8658";
+        buttonNext.classList.add("next");
+        buttonNext.innerHTML = "&#8656";
+        container.appendChild(buttonPrev);
+        container.appendChild(buttonNext);
+        container.appendChild(div);
+    });
 }
-
-function swipeRight() {
-    switch (num) {
-        case 5: num = 1;
-            break;
-        default:
-            num++;
-    }
-    myFunction();
-}
-function swipeLeft() {
-    switch (num) {
-        case 1: num = 5;
-            break;
-        default:
-            num--;
-    }
-    myFunction();
-}
-
-var num = 1;
-myFunction();
