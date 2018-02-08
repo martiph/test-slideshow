@@ -1,6 +1,8 @@
 
 function myFunction() {
-    document.getElementById("slideshow").innerHTML = '<img alt="picture" src="./img/img' + num + '.jpg" />'
+    document.getElementById("slideshow").innerHTML = '<button onclick="swipeLeft()">&#8656</button>' +
+        '<img alt="picture" src="./img/img' + num + '.jpg" />' +
+        '<button onclick="swipeRight()">&#8658</button>'
 }
 
 function swipeRight() {
