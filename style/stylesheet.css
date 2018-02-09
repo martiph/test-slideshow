@@ -10,7 +10,7 @@ main{
 }
 
 img{
-    width: 50%;
+    width: 60%;
     height: auto;
     margin: 0 auto;
 }
@@ -21,4 +21,5 @@ button{
     color: #cccccc;
     vertical-align: middle;
     margin: auto 0;
+    position: relative;
 }
