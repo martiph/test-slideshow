@@ -1,5 +1,7 @@
 var body = document.getElementsByTagName("body")[0];
 var container = document.createElement("div");
+var counter = 0;
+
 container.setAttribute("id", "container");
 container.appendChild(document.createElement("div"));
 body.appendChild(container);
@@ -29,15 +31,15 @@ function createSlides(container) {
     for (var i = 0; i < 5; i++) {
         container.replaceChild(allDiv[i], container.children[0]);
         // previous
-        document.getElementById("prev").addEventListener("click", function () { displayImage(allDiv, i, "left") });
+        document.getElementById("prev").addEventListener("click", function () { displayImage(allDiv, "left") });
         // next
-        document.getElementById("next").addEventListener("click", function () { displayImage(allDiv, i, "right") });
+        document.getElementById("next").addEventListener("click", function () { displayImage(allDiv, "right") });
     }
 
-    displayImage(allDiv, 0, "same");
+    displayImage(allDiv, "same");
 }
 
-function displayImage(allDiv, counter, direction) {
+function displayImage(allDiv, direction) {
     if (direction == "right") {
         counter = (counter + 1) % 5;
     } else if (direction == "left") {
