@@ -13,6 +13,7 @@ img{
     width: 50%;
     height: auto;
     margin: 0 auto;
+    display: block;
 }
 
 button{
@@ -20,5 +21,5 @@ button{
     border-color: #333333;
     color: #cccccc;
     vertical-align: middle;
-    margin: auto 0;
+    margin: 1em;
 }
